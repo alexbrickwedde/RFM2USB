@@ -1,0 +1,351 @@
+   1               		.file	"MIDIClassDevice.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.section	.text.MIDI_Device_ReceiveEventPacket,"ax",@progbits
+  17               	.global	MIDI_Device_ReceiveEventPacket
+  19               	MIDI_Device_ReceiveEventPacket:
+  20               	.LFB99:
+  21               	.LSM0:
+  22               	.LVL0:
+  23               	/* prologue: function */
+  24               	/* frame size = 0 */
+  25 0000 FC01      		movw r30,r24
+  26               	.LSM1:
+  27 0002 8EB3      		in r24,62-32
+  28               	.LVL1:
+  29 0004 8430      		cpi r24,lo8(4)
+  30 0006 01F4      		brne .L2
+  31               	.LSM2:
+  32 0008 8581      		ldd r24,Z+5
+  33               	.LBB30:
+  34               	.LBB31:
+  35               	.LSM3:
+  36 000a 8093 E900 		sts 233,r24
+  37               	.LBE31:
+  38               	.LBE30:
+  39               	.LBB32:
+  40               	.LBB33:
+  41               	.LSM4:
+  42 000e 8091 E800 		lds r24,232
+  43               	.LBE33:
+  44               	.LBE32:
+  45               	.LSM5:
+  46 0012 85FF      		sbrs r24,5
+  47 0014 00C0      		rjmp .L2
+  48               	.LSM6:
+  49 0016 CB01      		movw r24,r22
+  50 0018 64E0      		ldi r22,lo8(4)
+  51 001a 70E0      		ldi r23,hi8(4)
+  52               	.LVL2:
+  53 001c 40E0      		ldi r20,lo8(0)
+  54 001e 50E0      		ldi r21,hi8(0)
+  55 0020 0E94 0000 		call Endpoint_Read_Stream_LE
+  56               	.LVL3:
+  57               	.LBB34:
+  58               	.LBB35:
+  59               	.LSM7:
+  60 0024 8091 E800 		lds r24,232
+  61               	.LBE35:
+  62               	.LBE34:
+  63               	.LSM8:
+  64 0028 85FD      		sbrc r24,5
+  65 002a 00C0      		rjmp .L6
+  66               	.L3:
+  67               	.LBB36:
+  68               	.LBB37:
+  69               	.LSM9:
+  70 002c 8091 E800 		lds r24,232
+  71 0030 8B77      		andi r24,lo8(123)
+  72 0032 8093 E800 		sts 232,r24
+  73               	.L6:
+  74 0036 81E0      		ldi r24,lo8(1)
+  75 0038 0895      		ret
+  76               	.LVL4:
+  77               	.L2:
+  78 003a 80E0      		ldi r24,lo8(0)
+  79               	.LBE37:
+  80               	.LBE36:
+  81               	.LSM10:
+  82 003c 0895      		ret
+  83               	.LFE99:
+  85               		.section	.text.MIDI_Device_Flush,"ax",@progbits
+  86               	.global	MIDI_Device_Flush
+  88               	MIDI_Device_Flush:
+  89               	.LFB98:
+  90               	.LSM11:
+  91               	.LVL5:
+  92               	/* prologue: function */
+  93               	/* frame size = 0 */
+  94 0000 FC01      		movw r30,r24
+  95               	.LSM12:
+  96 0002 8EB3      		in r24,62-32
+  97               	.LVL6:
+  98 0004 8430      		cpi r24,lo8(4)
+  99 0006 01F0      		breq .L8
+ 100 0008 82E0      		ldi r24,lo8(2)
+ 101               	.LVL7:
+ 102 000a 0895      		ret
+ 103               	.LVL8:
+ 104               	.L8:
+ 105               	.LSM13:
+ 106 000c 8181      		ldd r24,Z+1
+ 107               	.LBB38:
+ 108               	.LBB39:
+ 109               	.LSM14:
+ 110 000e 8093 E900 		sts 233,r24
+ 111               	.LBE39:
+ 112               	.LBE38:
+ 113               	.LBB40:
+ 114               	.LBB41:
+ 115               	.LSM15:
+ 116 0012 8091 F200 		lds r24,242
+ 117               	.LBE41:
+ 118               	.LBE40:
+ 119               	.LSM16:
+ 120 0016 8823      		tst r24
+ 121 0018 01F0      		breq .L9
+ 122               	.LBB42:
+ 123               	.LBB43:
+ 124               	.LSM17:
+ 125 001a 8091 E800 		lds r24,232
+ 126 001e 8E77      		andi r24,lo8(126)
+ 127 0020 8093 E800 		sts 232,r24
+ 128               	.LBE43:
+ 129               	.LBE42:
+ 130               	.LSM18:
+ 131 0024 0E94 0000 		call Endpoint_WaitUntilReady
+ 132               	.LVL9:
+ 133               	.L9:
+ 134               	.LSM19:
+ 135 0028 0895      		ret
+ 136               	.LFE98:
+ 138               		.section	.text.MIDI_Device_USBTask,"ax",@progbits
+ 139               	.global	MIDI_Device_USBTask
+ 141               	MIDI_Device_USBTask:
+ 142               	.LFB96:
+ 143               	.LSM20:
+ 144               	.LVL10:
+ 145               	/* prologue: function */
+ 146               	/* frame size = 0 */
+ 147 0000 9C01      		movw r18,r24
+ 148               	.LSM21:
+ 149 0002 8EB3      		in r24,62-32
+ 150               	.LVL11:
+ 151 0004 8430      		cpi r24,lo8(4)
+ 152 0006 01F4      		brne .L14
+ 153               	.LSM22:
+ 154 0008 C901      		movw r24,r18
+ 155 000a 0E94 0000 		call MIDI_Device_Flush
+ 156               	.LVL12:
+ 157               	.L14:
+ 158 000e 0895      		ret
+ 159               	.LFE96:
+ 161               		.section	.text.MIDI_Device_SendEventPacket,"ax",@progbits
+ 162               	.global	MIDI_Device_SendEventPacket
+ 164               	MIDI_Device_SendEventPacket:
+ 165               	.LFB97:
+ 166               	.LSM23:
+ 167               	.LVL13:
+ 168               	/* prologue: function */
+ 169               	/* frame size = 0 */
+ 170 0000 FC01      		movw r30,r24
+ 171               	.LSM24:
+ 172 0002 8EB3      		in r24,62-32
+ 173               	.LVL14:
+ 174 0004 8430      		cpi r24,lo8(4)
+ 175 0006 01F0      		breq .L16
+ 176 0008 92E0      		ldi r25,lo8(2)
+ 177               	.LVL15:
+ 178 000a 00C0      		rjmp .L17
+ 179               	.LVL16:
+ 180               	.L16:
+ 181               	.LSM25:
+ 182 000c 8181      		ldd r24,Z+1
+ 183               	.LBB44:
+ 184               	.LBB45:
+ 185               	.LSM26:
+ 186 000e 8093 E900 		sts 233,r24
+ 187               	.LBE45:
+ 188               	.LBE44:
+ 189               	.LSM27:
+ 190 0012 CB01      		movw r24,r22
+ 191 0014 64E0      		ldi r22,lo8(4)
+ 192 0016 70E0      		ldi r23,hi8(4)
+ 193               	.LVL17:
+ 194 0018 40E0      		ldi r20,lo8(0)
+ 195 001a 50E0      		ldi r21,hi8(0)
+ 196 001c 0E94 0000 		call Endpoint_Write_Stream_LE
+ 197               	.LVL18:
+ 198 0020 982F      		mov r25,r24
+ 199               	.LVL19:
+ 200 0022 8823      		tst r24
+ 201 0024 01F4      		brne .L17
+ 202               	.LVL20:
+ 203               	.LBB46:
+ 204               	.LBB47:
+ 205               	.LSM28:
+ 206 0026 8091 E800 		lds r24,232
+ 207               	.LVL21:
+ 208               	.LBE47:
+ 209               	.LBE46:
+ 210               	.LSM29:
+ 211 002a 85FD      		sbrc r24,5
+ 212 002c 00C0      		rjmp .L17
+ 213               	.LBB48:
+ 214               	.LBB49:
+ 215               	.LSM30:
+ 216 002e 8091 E800 		lds r24,232
+ 217 0032 8E77      		andi r24,lo8(126)
+ 218 0034 8093 E800 		sts 232,r24
+ 219               	.LVL22:
+ 220               	.L17:
+ 221               	.LBE49:
+ 222               	.LBE48:
+ 223               	.LSM31:
+ 224 0038 892F      		mov r24,r25
+ 225               	/* epilogue start */
+ 226 003a 0895      		ret
+ 227               	.LFE97:
+ 229               		.section	.text.MIDI_Device_ConfigureEndpoints,"ax",@progbits
+ 230               	.global	MIDI_Device_ConfigureEndpoints
+ 232               	MIDI_Device_ConfigureEndpoints:
+ 233               	.LFB95:
+ 234               	.LSM32:
+ 235               	.LVL23:
+ 236 0000 1F93      		push r17
+ 237 0002 CF93      		push r28
+ 238 0004 DF93      		push r29
+ 239               	/* prologue: function */
+ 240               	/* frame size = 0 */
+ 241 0006 EC01      		movw r28,r24
+ 242               	.LSM33:
+ 243 0008 1986      		std Y+9,__zero_reg__
+ 244 000a 11E0      		ldi r17,lo8(1)
+ 245               	.LVL24:
+ 246               	.L29:
+ 247               	.LBB50:
+ 248               	.LBB51:
+ 249               	.LSM34:
+ 250 000c 8981      		ldd r24,Y+1
+ 251 000e 1817      		cp r17,r24
+ 252 0010 01F4      		brne .L20
+ 253               	.LSM35:
+ 254 0012 6A81      		ldd r22,Y+2
+ 255 0014 7B81      		ldd r23,Y+3
+ 256               	.LVL25:
+ 257               	.LSM36:
+ 258 0016 8C81      		ldd r24,Y+4
+ 259               	.LVL26:
+ 260 0018 30E8      		ldi r19,lo8(-128)
+ 261               	.LVL27:
+ 262 001a 00C0      		rjmp .L21
+ 263               	.LVL28:
+ 264               	.L20:
+ 265               	.LSM37:
+ 266 001c 8D81      		ldd r24,Y+5
+ 267 001e 1817      		cp r17,r24
+ 268 0020 01F4      		brne .L22
+ 269               	.LSM38:
+ 270 0022 6E81      		ldd r22,Y+6
+ 271 0024 7F81      		ldd r23,Y+7
+ 272               	.LVL29:
+ 273               	.LSM39:
+ 274 0026 8885      		ldd r24,Y+8
+ 275               	.LVL30:
+ 276 0028 30E0      		ldi r19,lo8(0)
+ 277               	.LVL31:
+ 278               	.L21:
+ 279               	.LSM40:
+ 280 002a 8823      		tst r24
+ 281 002c 01F4      		brne .L23
+ 282 002e 40E0      		ldi r20,lo8(0)
+ 283 0030 00C0      		rjmp .L24
+ 284               	.L23:
+ 285 0032 44E0      		ldi r20,lo8(4)
+ 286               	.L24:
+ 287 0034 20E0      		ldi r18,lo8(0)
+ 288               	.LVL32:
+ 289 0036 88E0      		ldi r24,lo8(8)
+ 290 0038 90E0      		ldi r25,hi8(8)
+ 291               	.LVL33:
+ 292 003a 00C0      		rjmp .L25
+ 293               	.L26:
+ 294               	.LBB52:
+ 295               	.LBB53:
+ 296               	.LBB54:
+ 297               	.LBB55:
+ 298               	.LSM41:
+ 299 003c 2F5F      		subi r18,lo8(-(1))
+ 300               	.LSM42:
+ 301 003e 880F      		lsl r24
+ 302 0040 991F      		rol r25
+ 303               	.L25:
+ 304               	.LSM43:
+ 305 0042 8617      		cp r24,r22
+ 306 0044 9707      		cpc r25,r23
+ 307 0046 00F0      		brlo .L26
+ 308               	.LBE55:
+ 309               	.LBE54:
+ 310               	.LBE53:
+ 311               	.LSM44:
+ 312 0048 60E0      		ldi r22,lo8(0)
+ 313               	.LVL34:
+ 314 004a 3111      		cpse r19,__zero_reg__
+ 315 004c 61E0      		ldi r22,lo8(1)
+ 316               	.L27:
+ 317 004e 6068      		ori r22,lo8(-128)
+ 318 0050 4260      		ori r20,lo8(2)
+ 319 0052 2295      		swap r18
+ 320 0054 207F      		andi r18,lo8(-16)
+ 321 0056 422B      		or r20,r18
+ 322 0058 812F      		mov r24,r17
+ 323               	.LVL35:
+ 324 005a 0E94 0000 		call Endpoint_ConfigureEndpoint_Prv
+ 325               	.LVL36:
+ 326               	.LBE52:
+ 327               	.LSM45:
+ 328 005e 8823      		tst r24
+ 329 0060 01F0      		breq .L28
+ 330               	.L22:
+ 331               	.LBE51:
+ 332               	.LSM46:
+ 333 0062 1F5F      		subi r17,lo8(-(1))
+ 334 0064 1530      		cpi r17,lo8(5)
+ 335 0066 01F4      		brne .L29
+ 336 0068 81E0      		ldi r24,lo8(1)
+ 337               	.L28:
+ 338               	/* epilogue start */
+ 339               	.LBE50:
+ 340               	.LSM47:
+ 341 006a DF91      		pop r29
+ 342 006c CF91      		pop r28
+ 343               	.LVL37:
+ 344 006e 1F91      		pop r17
+ 345               	.LVL38:
+ 346 0070 0895      		ret
+ 347               	.LFE95:
+ 405               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 MIDIClassDevice.c
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:2      *ABS*:0000003f __SREG__
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:5      *ABS*:00000034 __CCP__
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:19     .text.MIDI_Device_ReceiveEventPacket:00000000 MIDI_Device_ReceiveEventPacket
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:88     .text.MIDI_Device_Flush:00000000 MIDI_Device_Flush
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:141    .text.MIDI_Device_USBTask:00000000 MIDI_Device_USBTask
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:164    .text.MIDI_Device_SendEventPacket:00000000 MIDI_Device_SendEventPacket
+C:\Users\SonAle\AppData\Local\Temp/ccs344lg.s:232    .text.MIDI_Device_ConfigureEndpoints:00000000 MIDI_Device_ConfigureEndpoints
+
+UNDEFINED SYMBOLS
+Endpoint_Read_Stream_LE
+Endpoint_WaitUntilReady
+Endpoint_Write_Stream_LE
+Endpoint_ConfigureEndpoint_Prv
