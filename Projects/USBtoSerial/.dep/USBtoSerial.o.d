@@ -97,7 +97,7 @@ USBtoSerial.o: USBtoSerial.c USBtoSerial.h Descriptors.h \
   ../../LUFA/Drivers/Peripheral/AVR8/../../../Common/Common.h \
   ../../LUFA/Drivers/Peripheral/AVR8/../../Misc/TerminalCodes.h \
   ../../LUFA/Drivers/Misc/RingBuffer.h \
-  ../../LUFA/Drivers/Misc/../../Common/Common.h
+  ../../LUFA/Drivers/Misc/../../Common/Common.h rf12.h
 
 USBtoSerial.h:
 
@@ -302,3 +302,5 @@ Descriptors.h:
 ../../LUFA/Drivers/Misc/RingBuffer.h:
 
 ../../LUFA/Drivers/Misc/../../Common/Common.h:
+
+rf12.h:

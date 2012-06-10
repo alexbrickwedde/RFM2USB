@@ -316,15 +316,15 @@
  379               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 ConfigDescriptor.c
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:2      *ABS*:0000003f __SREG__
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:3      *ABS*:0000003e __SP_H__
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:4      *ABS*:0000003d __SP_L__
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:5      *ABS*:00000034 __CCP__
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:6      *ABS*:00000000 __tmp_reg__
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:7      *ABS*:00000001 __zero_reg__
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:19     .text.USB_GetNextDescriptorOfType:00000000 USB_GetNextDescriptorOfType
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:92     .text.USB_GetNextDescriptorOfTypeBefore:00000000 USB_GetNextDescriptorOfTypeBefore
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:172    .text.USB_GetNextDescriptorOfTypeAfter:00000000 USB_GetNextDescriptorOfTypeAfter
-C:\Users\SonAle\AppData\Local\Temp/cc6Qzzfl.s:218    .text.USB_GetNextDescriptorComp:00000000 USB_GetNextDescriptorComp
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:2      *ABS*:0000003f __SREG__
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:5      *ABS*:00000034 __CCP__
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:19     .text.USB_GetNextDescriptorOfType:00000000 USB_GetNextDescriptorOfType
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:92     .text.USB_GetNextDescriptorOfTypeBefore:00000000 USB_GetNextDescriptorOfTypeBefore
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:172    .text.USB_GetNextDescriptorOfTypeAfter:00000000 USB_GetNextDescriptorOfTypeAfter
+C:\Users\SonAle\AppData\Local\Temp/cczpHvrX.s:218    .text.USB_GetNextDescriptorComp:00000000 USB_GetNextDescriptorComp
 
 NO UNDEFINED SYMBOLS

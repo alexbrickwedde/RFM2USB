@@ -246,17 +246,17 @@
  289               	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 Descriptors.c
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:2      *ABS*:0000003f __SREG__
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:3      *ABS*:0000003e __SP_H__
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:4      *ABS*:0000003d __SP_L__
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:5      *ABS*:00000034 __CCP__
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:6      *ABS*:00000000 __tmp_reg__
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:7      *ABS*:00000001 __zero_reg__
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:19     .text.CALLBACK_USB_GetDescriptor:00000000 CALLBACK_USB_GetDescriptor
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:133    .progmem.data:00000000 DeviceDescriptor
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:151    .progmem.data:00000012 ConfigurationDescriptor
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:212    .progmem.data:00000050 LanguageString
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:219    .progmem.data:00000054 ManufacturerString
-C:\Users\SonAle\AppData\Local\Temp/ccz7ttYL.s:238    .progmem.data:0000006e ProductString
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:2      *ABS*:0000003f __SREG__
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:3      *ABS*:0000003e __SP_H__
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:4      *ABS*:0000003d __SP_L__
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:5      *ABS*:00000034 __CCP__
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:19     .text.CALLBACK_USB_GetDescriptor:00000000 CALLBACK_USB_GetDescriptor
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:133    .progmem.data:00000000 DeviceDescriptor
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:151    .progmem.data:00000012 ConfigurationDescriptor
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:212    .progmem.data:00000050 LanguageString
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:219    .progmem.data:00000054 ManufacturerString
+C:\Users\SonAle\AppData\Local\Temp/ccxRNjgD.s:238    .progmem.data:0000006e ProductString
 
 NO UNDEFINED SYMBOLS
